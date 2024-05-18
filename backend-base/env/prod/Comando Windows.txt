@@ -1,5 +1,5 @@
-Inicializar: Execute o comando terraform init.
+terraform init
 
-Aplicar: Execute o comando terraform apply -auto-approve.
+terraform apply -auto-approve
 
 terraform destroy -auto-approve
