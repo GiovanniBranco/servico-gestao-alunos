@@ -2,13 +2,13 @@ const { client } = require("../../../config/clientSQS");
 const { SendMessageCommand } = require("@aws-sdk/client-sqs");
 const crypto = require("crypto");
 
-module.exports.cadastroProducer = async (objAluno) => {
+module.exports.emailConfirmaProducer = async (objAluno) => {
   const input = {
-    QueueUrl: process.env.SQS_QUEUE_CADASTRO_URL,
+    QueueUrl: process.env.SQS_QUEUE_EMAIL_CONFIRMA_URL,
     MessageBody: JSON.stringify(objAluno),
     DelaySeconds: 0,
     MessageDeduplicationId: crypto.randomUUID(),
-    MessageGroupId: "cadastro",
+    MessageGroupId: "email",
   };
 
   try {
